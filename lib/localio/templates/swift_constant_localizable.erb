@@ -7,7 +7,8 @@ Created by localio
 */
 
 import Foundation
+import Localize_Swift
 
 <% @segments.each do |term| %>
-let <%= term.key %>: String = { return NSLocalizedString("<%= term.translation %>", comment: "") }()<%
+var <%= term.key %>: String { return "<%= term.translation %>".localized() }<%
 end %>
